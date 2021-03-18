@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Board from './Components/Board';
+import Mouse from "./model/Mouse";
+import CollapseButton from "./Components/CollapseButton";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+    componentDidMount() {
+        const canvas = document.querySelector('#canvas');
+        if (canvas instanceof HTMLCanvasElement) {
+            const canvasBCR = canvas.getBoundingClientRect();
+            canvas.addEventListener('mousemove',  e => {
+                Mouse.setPosition(e.clientX - canvasBCR.left,e.clientY - canvasBCR.top);
+            });
+        }
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <div className="container">
+                    <Board />
+                </div>
+
+                <CollapseButton />
+            </div>
+        );
+    }
 }
 
 export default App;

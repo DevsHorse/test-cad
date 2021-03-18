@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: inline-block;
+  border: 2px solid #f11d1d;
+  width: auto;
+  margin-bottom: 20px;
+}
+
+.collapse-btn {
+  width: 200px;
+  height: 40px;
+  border: 1px solid #f11d1d;
+  background-color: #fff;
+  border-radius: 2px;
+  font-size: 18px;
+}
