@@ -1,27 +1,36 @@
 import React from 'react';
-import Board from './Components/Board';
-import Mouse from "./model/Mouse";
-import CollapseButton from "./Components/CollapseButton";
+import AppBoard from "./model/AppBoard";
 
 class App extends React.Component {
+    public canvasContainer: any = null;
+    public board: any = null;
+    constructor(props: any) {
+        super(props);
+        this.collapseHandler = this.collapseHandler.bind(this);
+    }
+
     componentDidMount() {
-        const canvas = document.querySelector('#canvas');
-        if (canvas instanceof HTMLCanvasElement) {
-            const canvasBCR = canvas.getBoundingClientRect();
-            canvas.addEventListener('mousemove',  e => {
-                Mouse.setPosition(e.clientX - canvasBCR.left,e.clientY - canvasBCR.top);
-            });
-        }
+        const board = new AppBoard(document.createElement('canvas'));
+        board.setSettings(1000, 500);
+        this.canvasContainer.appendChild(board.canvas);
+        this.board = board;
+    }
+
+    collapseHandler(e: React.MouseEvent) {
+        e.preventDefault();
+        this.board.collapse();
     }
 
     render() {
         return (
             <div className="App">
-                <div className="container">
-                    <Board />
-                </div>
-
-                <CollapseButton />
+                <div
+                    className="container"
+                    ref={(node)=>this.canvasContainer=node}
+                />
+                <button className="collapse-btn" onClick={this.collapseHandler}>
+                    Collapse lines
+                </button>
             </div>
         );
     }

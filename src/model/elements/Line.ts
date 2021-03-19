@@ -1,40 +1,33 @@
 import Point from "./Point";
+import LineElement from "./LineElement";
 
 
 export default class Line {
-    private _p1;
-    private _p2;
+    public _p1:Point;
+    public _p2:Point;
 
-    constructor(p1: Point, p2: Point) {
-        this._p1 = p1;
-        this._p2 = p2;
+    constructor(p1: Point, p2: Point){
+        this._p1=p1;
+        this._p2=p2;
     }
 
-    get p1() {
-        return this._p1;
+    get A(){
+        return this._p2.y-this._p1.y;
     }
 
-    get p2() {
-        return this._p2;
+    get B(){
+        return this._p2.x-this._p1.x;
     }
 
-    set p1(point: Point){
-        this._p1 = point;
+    getPointOffset(offset: number){
+        return new Point(this._p1.x + this.B*offset, this._p1.y + this.A*offset);
     }
 
-    set p2(point: Point){
-        this._p2 = point;
-    }
-
-    getPoints() {
-        return [this._p1, this._p2];
-    }
-
-    static getLinesIntersects(lineElements: Array<Line>): Array<Point> {
+    static getLinesIntersects(lineElements: Array<LineElement>): Array<Point> {
         let res = [];
         for (let i=0; i<lineElements.length; i++) {
             for (let j=i+1; j<lineElements.length; j++) {
-                const point = lineElements[i].getCrossPoint(lineElements[j]);
+                const point = lineElements[i].line.getCrossPoint(lineElements[j].line);
                 if (point) res.push(point);
             }
         }
