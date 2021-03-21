@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.5a201ab7.chunk.css",
-    "main.js": "/static/js/main.781be266.chunk.js",
-    "main.js.map": "/static/js/main.781be266.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.b2b84bed.js",
-    "runtime-main.js.map": "/static/js/runtime-main.b2b84bed.js.map",
-    "static/js/2.e6d78ebe.chunk.js": "/static/js/2.e6d78ebe.chunk.js",
-    "static/js/2.e6d78ebe.chunk.js.map": "/static/js/2.e6d78ebe.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.5a201ab7.chunk.css.map": "/static/css/main.5a201ab7.chunk.css.map",
-    "static/js/2.e6d78ebe.chunk.js.LICENSE.txt": "/static/js/2.e6d78ebe.chunk.js.LICENSE.txt"
+    "main.css": "/test-cad/static/css/main.5a201ab7.chunk.css",
+    "main.js": "/test-cad/static/js/main.781be266.chunk.js",
+    "main.js.map": "/test-cad/static/js/main.781be266.chunk.js.map",
+    "runtime-main.js": "/test-cad/static/js/runtime-main.edb2e7d1.js",
+    "runtime-main.js.map": "/test-cad/static/js/runtime-main.edb2e7d1.js.map",
+    "static/js/2.e6d78ebe.chunk.js": "/test-cad/static/js/2.e6d78ebe.chunk.js",
+    "static/js/2.e6d78ebe.chunk.js.map": "/test-cad/static/js/2.e6d78ebe.chunk.js.map",
+    "index.html": "/test-cad/index.html",
+    "static/css/main.5a201ab7.chunk.css.map": "/test-cad/static/css/main.5a201ab7.chunk.css.map",
+    "static/js/2.e6d78ebe.chunk.js.LICENSE.txt": "/test-cad/static/js/2.e6d78ebe.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.b2b84bed.js",
+    "static/js/runtime-main.edb2e7d1.js",
     "static/js/2.e6d78ebe.chunk.js",
     "static/css/main.5a201ab7.chunk.css",
     "static/js/main.781be266.chunk.js"
