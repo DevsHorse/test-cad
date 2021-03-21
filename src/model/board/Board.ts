@@ -15,6 +15,10 @@ export default class Board {
         return this._canvas;
     }
 
+    get ctx() {
+        return this._ctx;
+    }
+
     setSettings(width: number, height: number) {
         if (this._ctx) {
             this._ctx.canvas.width = width;
@@ -27,29 +31,5 @@ export default class Board {
     clear(){
         if (!this._ctx) return;
         this._ctx.clearRect(0,0,this._ctx.canvas.width,this._ctx.canvas.height);
-    }
-
-    drawElement<T>(element: T){
-        if (element instanceof LineElement) {
-            this.drawLine(element);
-        } else if (element instanceof Point) {
-            this.drawPoint(element);
-        }
-    }
-
-    drawLine(line: LineElement) {
-        if (!this._ctx) return;
-        this._ctx.beginPath();
-        this._ctx.moveTo(line.p1.x, line.p1.y);
-        this._ctx.lineTo(line.p2.x, line.p2.y);
-        this._ctx.stroke();
-    }
-
-    drawPoint(point: Point) {
-        if (!this._ctx) return;
-        this._ctx.beginPath ();
-        this._ctx.arc (point.x, point.y, 5, 0, Math.PI * 2, false);
-        this._ctx.fill();
-        this._ctx.stroke();
     }
 }

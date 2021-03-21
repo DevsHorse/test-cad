@@ -6,20 +6,22 @@ import Document from "./Document";
 export default class AppBoard extends InteractiveBoard {
     private _document: Document = new Document();
 
-    constructor(canvas: HTMLCanvasElement) {
-        super(canvas);
-    }
-
     mouseClick(e: MouseEvent) {
+        if (this.isCollapsed) return;
         if (!this.startDraw) {
-            const startPoint = new Point(this.realMousePosition.x, this.realMousePosition.y);
-            const line = new Line(startPoint, startPoint);
-            this._document.addElement(line);
+            this.addNewLine();
         }
         super.mouseClick(e);
     }
 
+    addNewLine() {
+        const startPoint = new Point(this.realMousePosition.x, this.realMousePosition.y);
+        const line = new Line(startPoint, startPoint);
+        this._document.addElement(line);
+    }
+
     mouseMove(e: MouseEvent) {
+        if (this.isCollapsed) return;
         super.mouseMove(e);
         if (this.startDraw) {
             this._document.moveLastLine(new Point(this.realMousePosition.x, this.realMousePosition.y));
@@ -34,9 +36,11 @@ export default class AppBoard extends InteractiveBoard {
         super.contextmenuClick(e);
     }
 
-    collapse() {
+    collapseHandler() {
+        if (this.isCollapsed) return;
+        this.toggleEventsDisable();
         const step = 0.5 / 30;
-        let animId: any =null;
+        let animId:any=null;
         const animation = () => {
             animId = requestAnimationFrame(animation);
             for (let el of this._document.elements) {
@@ -50,8 +54,11 @@ export default class AppBoard extends InteractiveBoard {
             cancelAnimationFrame(animId);
             this._document.clear();
             this.render();
+            this.toggleEventsDisable();
         }, 3000);
     }
+
+   
 
     render() {
         if (this._document) {

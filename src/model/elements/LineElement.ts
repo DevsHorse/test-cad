@@ -1,18 +1,14 @@
 import Point from "./Point";
-import ElementRenderer from "../render/ElementRenderer";
+import LineRenderer from '../render/LineRenderer';
 import Line from "./Line";
 
 
 export default class LineElement {
     private _line: Line;
-    private _renderer: ElementRenderer<LineElement> = new ElementRenderer<LineElement>(this);
+    private _renderer: LineRenderer = new LineRenderer(this);
 
     constructor(p1: Point, p2: Point) {
         this._line = new Line(p1, p2);
-    }
-
-    get renderer(){
-        return this._renderer;
     }
 
     get p1() {
@@ -35,8 +31,8 @@ export default class LineElement {
         return this._line;
     }
 
-    getPoints() {
-        return [this._line._p1, this._line._p2];
+    get renderer(){
+        return this._renderer;
     }
 
     shorten(offset: number) {

@@ -1,9 +1,9 @@
-import ElementRenderer from "../render/ElementRenderer";
+import IntersectPointRenderer from '../render/IntersectPointRenderer';
 
 export default class Point {
     public x: number;
     public y: number;
-    private _renderer: ElementRenderer<Point> = new ElementRenderer<Point>(this);
+    private _renderer: IntersectPointRenderer = new IntersectPointRenderer(this);
 
     constructor(x: number, y: number) {
         this.x = x;
