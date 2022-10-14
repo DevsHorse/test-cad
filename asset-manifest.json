@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/test-cad/static/css/main.5a201ab7.chunk.css",
-    "main.js": "/test-cad/static/js/main.781be266.chunk.js",
-    "main.js.map": "/test-cad/static/js/main.781be266.chunk.js.map",
+    "main.js": "/test-cad/static/js/main.c9cfbf61.chunk.js",
+    "main.js.map": "/test-cad/static/js/main.c9cfbf61.chunk.js.map",
     "runtime-main.js": "/test-cad/static/js/runtime-main.edb2e7d1.js",
     "runtime-main.js.map": "/test-cad/static/js/runtime-main.edb2e7d1.js.map",
     "static/js/2.e6d78ebe.chunk.js": "/test-cad/static/js/2.e6d78ebe.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.edb2e7d1.js",
     "static/js/2.e6d78ebe.chunk.js",
     "static/css/main.5a201ab7.chunk.css",
-    "static/js/main.781be266.chunk.js"
+    "static/js/main.c9cfbf61.chunk.js"
   ]
 }
